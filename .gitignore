@@ -1,3 +1,14 @@
+# macOS
 .DS_Store
+.AppleDouble
+
+# Vim
 *.swp
 *.swo
+
+# Temporary
+*.tmp
+*.bak
+
+# Logs
+*.log

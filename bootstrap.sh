@@ -2,7 +2,7 @@
 
 set -e
 
-echo "Installing Homebrew packages..."
+echo "🍺 Installing Homebrew packages..."
 brew bundle --file=homebrew/Brewfile
 
-echo "Done."
+echo "✅ Installation complete."
