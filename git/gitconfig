@@ -1,0 +1,50 @@
+[user]
+    name = Avienwolf
+    email = benganilakshya2006@gmail.com
+
+[core]
+    editor = "code --wait"
+    pager = delta
+	excludesfile = /Users/lakshya/Dotfiles/git/gitignore_global
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    line-numbers = true
+    side-by-side = true
+    dark = true
+    keep-plus-minus-markers = false
+    syntax-theme = Monokai Extended
+    features = decorations
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold
+    file-decoration-style = none
+    hunk-header-decoration-style = cyan box
+
+[merge]
+    conflictstyle = zdiff3
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = false
+
+[push]
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+
+[rerere]
+    enabled = true
+
+[help]
+    autocorrect = prompt
+
+[color]
+    ui = auto

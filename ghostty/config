@@ -1,0 +1,70 @@
+# ==================================================
+# House of Desires
+# Ghostty Configuration
+# ==================================================
+
+# --------------------------------------------------
+# Font
+# --------------------------------------------------
+
+font-family = MesloLGS NF
+font-size = 15
+font-thicken = false
+
+# --------------------------------------------------
+# Theme
+# --------------------------------------------------
+
+theme = /Users/lakshya/.config/ghostty/themes/HouseOfDesires
+
+# --------------------------------------------------
+# Window
+# --------------------------------------------------
+
+window-padding-x = 16
+window-padding-y = 14
+
+window-save-state = always
+
+background-opacity = 0.72
+background-blur-radius = 64
+unfocused-split-opacity = 0.90
+
+window-theme = auto
+macos-titlebar-style = transparent
+
+# --------------------------------------------------
+# Cursor
+# --------------------------------------------------
+
+cursor-style = block
+cursor-style-blink = true
+
+# --------------------------------------------------
+# Scrolling
+# --------------------------------------------------
+
+scrollback-limit = 100000
+
+mouse-hide-while-typing = true
+copy-on-select = clipboard
+
+# --------------------------------------------------
+# Shell
+# --------------------------------------------------
+
+shell-integration = detect
+
+# --------------------------------------------------
+# Performance
+# --------------------------------------------------
+
+window-vsync = true
+
+# --------------------------------------------------
+# Quality of Life
+# --------------------------------------------------
+
+confirm-close-surface = false
+
+working-directory = home

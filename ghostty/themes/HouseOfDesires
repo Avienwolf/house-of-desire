@@ -1,0 +1,29 @@
+# ==================================================
+# House of Desires Noir v2
+# ==================================================
+
+background = #080808
+foreground = #ECE8E1
+
+cursor-color = #FF3B4D
+
+selection-background = #1A0E11
+selection-foreground = #FFFFFF
+
+palette = 0=#020202
+palette = 1=#8A0F1D
+palette = 2=#4A5C4A
+palette = 3=#8A6A2E
+palette = 4=#486A9A
+palette = 5=#5B3A47
+palette = 6=#4D696A
+palette = 7=#CFC8BF
+
+palette = 8=#2B2B2B
+palette = 9=#FF3045
+palette = 10=#6C8669
+palette = 11=#C89A4A
+palette = 12=#82AFFF
+palette = 13=#8A596E
+palette = 14=#6E9B99
+palette = 15=#FFFFFF
