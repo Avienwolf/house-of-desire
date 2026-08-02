@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT="$HOME/Dotfiles"
+
+source "$ROOT/internal/core/paths.sh"
+source "$ROOT/internal/core/colors.sh"
+source "$ROOT/internal/core/output.sh"
+source "$ROOT/internal/core/utils.sh"
+
+for module in "$ROOT"/internal/commands/*.sh; do
+    source "$module"
+done
+
+usage() {
+cat <<HELP
+House of Desire
+
+Usage:
+  hod doctor
+  hod save "message"
+  hod update
+  hod install
+  hod bootstrap
+  hod config
+  hod theme
+  hod ai
+HELP
+}
+
+cmd="${1:-}"
+
+[[ $# -gt 0 ]] && shift
+
+case "$cmd" in
+    doctor|save|update|install|bootstrap|config|theme|ai)
+        "$cmd" "$@"
+        ;;
+    *)
+        usage
+        ;;
+esac

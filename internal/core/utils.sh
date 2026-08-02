@@ -1,0 +1,7 @@
+exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+running() {
+    pgrep -f "$1" >/dev/null 2>&1
+}

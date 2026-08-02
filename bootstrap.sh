@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
-echo "🍺 Installing Homebrew packages..."
-brew bundle --file=homebrew/Brewfile
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "✅ Installation complete."
+exec "$ROOT/cmd/hod" bootstrap "$@"
