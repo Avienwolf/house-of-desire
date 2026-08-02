@@ -21,12 +21,15 @@ func New() Model {
 }
 
 func (m Model) Init() tea.Cmd {
-	return nil
+	return Tick()
 }
 
 func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 	switch msg := msg.(type) {
+
+	case TickMsg:
+		return m, Tick()
 
 	case tea.KeyMsg:
 

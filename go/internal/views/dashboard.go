@@ -42,25 +42,31 @@ func Dashboard() string {
 		status(services.Running("ollama")),
 	))
 
+	system := card.Render(fmt.Sprintf(
+		"System\n\nBattery  %s",
+		services.Battery(),
+	))
+
+	top := lipgloss.JoinHorizontal(
+		lipgloss.Top,
+		git,
+		aero,
+	)
+
+	bottom := lipgloss.JoinHorizontal(
+		lipgloss.Top,
+		karabiner,
+		ollama,
+		system,
+	)
+
 	return lipgloss.JoinVertical(
 		lipgloss.Left,
-
 		"🏠 House of Desire",
-
 		"",
-
-		lipgloss.JoinHorizontal(
-			lipgloss.Top,
-			git,
-			aero,
-		),
-
+		top,
 		"",
-
-		lipgloss.JoinHorizontal(
-			lipgloss.Top,
-			karabiner,
-			ollama,
-		),
+		bottom,
 	)
+
 }
