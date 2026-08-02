@@ -1,14 +1,65 @@
+# ==========================================================
+# House of Desire
+# ==========================================================
+
 # macOS
 .DS_Store
 .AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.vscode-test/
+.idea/
 
 # Vim
 *.swp
 *.swo
 
+# Logs
+*.log
+
+# Shell
+.zcompdump*
+.zsh_history
+.zsh_sessions/
+
+# Secrets
+.env
+.env.*
+*.secret
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Rust
+target/
+
 # Temporary
 *.tmp
 *.bak
+*.old
 
-# Logs
-*.log
+# Windows
+Thumbs.db
+
+# Local overrides
+*.local
+
+# Atuin
+atuin.db
+history.db
+
+# Ollama models
+models/
