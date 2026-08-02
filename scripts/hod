@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+set -e
+
+ROOT="$HOME/Dotfiles"
+
+doctor() {
+    echo "🏠 House of Desire"
+
+    command -v brew >/dev/null && echo "✓ brew"
+    command -v git >/dev/null && echo "✓ git"
+    command -v gh >/dev/null && echo "✓ gh"
+    command -v aerospace >/dev/null && echo "✓ AeroSpace"
+    command -v ghostty >/dev/null && echo "✓ Ghostty"
+    command -v ollama >/dev/null && echo "✓ Ollama"
+
+    pgrep -x AeroSpace >/dev/null && echo "✓ AeroSpace running"
+    pgrep -f karabiner >/dev/null && echo "✓ Karabiner running"
+    pgrep -x ollama >/dev/null && echo "✓ Ollama running"
+}
+
+save() {
+    git -C "$ROOT" add .
+
+    if git -C "$ROOT" diff --cached --quiet; then
+        echo "Nothing to commit."
+        exit 0
+    fi
+
+    git -C "$ROOT" commit -m "${1:-Update}"
+    git -C "$ROOT" push
+}
+
+update() {
+    brew update
+    brew upgrade
+    brew cleanup
+}
+
+case "${1:-}" in
+    doctor)
+        doctor
+        ;;
+    save)
+        shift
+        save "$@"
+        ;;
+    update)
+        update
+        ;;
+    *)
+        cat <<HELP
+House of Desire
+
+Usage:
+
+  hod doctor
+  hod save "message"
+  hod update
+
+HELP
+        ;;
+esac
