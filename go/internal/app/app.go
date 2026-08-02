@@ -28,6 +28,11 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 	switch msg := msg.(type) {
 
+	case tea.WindowSizeMsg:
+		m.Width = msg.Width
+		m.Height = msg.Height
+		return m, nil
+
 	case TickMsg:
 		return m, Tick()
 
@@ -38,12 +43,12 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case "ctrl+c", "q":
 			return m, tea.Quit
 
-		case "up":
+		case "up", "k":
 			if m.Selected > 0 {
 				m.Selected--
 			}
 
-		case "down":
+		case "down", "j":
 			if m.Selected < len(ui.SidebarItems)-1 {
 				m.Selected++
 			}

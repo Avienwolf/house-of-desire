@@ -9,9 +9,9 @@ import (
 )
 
 var card = lipgloss.NewStyle().
-	Border(lipgloss.RoundedBorder()).
+	Border(lipgloss.ThickBorder()).
 	Padding(1).
-	Width(24)
+	Width(26)
 
 func status(ok bool) string {
 	if ok {
