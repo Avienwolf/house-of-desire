@@ -1,48 +1,66 @@
 package views
 
+import (
+	"fmt"
+
+	"github.com/charmbracelet/lipgloss"
+
+	"github.com/Avienwolf/house-of-desire/internal/services"
+)
+
+var card = lipgloss.NewStyle().
+	Border(lipgloss.RoundedBorder()).
+	Padding(1).
+	Width(24)
+
+func status(ok bool) string {
+	if ok {
+		return "✓ Running"
+	}
+	return "✗ Stopped"
+}
+
 func Dashboard() string {
 
-	return `
-Git
-──────────────
+	git := card.Render(fmt.Sprintf(
+		"Git\n\n%s",
+		services.GitStatus(),
+	))
 
-✓ Clean
+	aero := card.Render(fmt.Sprintf(
+		"AeroSpace\n\n%s",
+		status(services.Running("AeroSpace")),
+	))
 
+	karabiner := card.Render(fmt.Sprintf(
+		"Karabiner\n\n%s",
+		status(services.Running("karabiner")),
+	))
 
-AeroSpace
-──────────────
+	ollama := card.Render(fmt.Sprintf(
+		"Ollama\n\n%s",
+		status(services.Running("ollama")),
+	))
 
-✓ Running
+	return lipgloss.JoinVertical(
+		lipgloss.Left,
 
+		"🏠 House of Desire",
 
-Karabiner
-──────────────
+		"",
 
-✓ Running
+		lipgloss.JoinHorizontal(
+			lipgloss.Top,
+			git,
+			aero,
+		),
 
+		"",
 
-Ollama
-──────────────
-
-✓ Running
-
-
-CPU
-──────────────
-
-11%
-
-
-RAM
-──────────────
-
-8.1 GB
-
-
-Battery
-──────────────
-
-84%
-`
-
+		lipgloss.JoinHorizontal(
+			lipgloss.Top,
+			karabiner,
+			ollama,
+		),
+	)
 }
