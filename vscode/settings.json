@@ -1,10 +1,49 @@
 {
-    "parallels-desktop.extension.path": "/Users/lakshya/.parallels-desktop-vscode",
-    "parallels-desktop.prlctl.path": "/usr/local/bin/prlctl",
-    "parallels-desktop.git.path": "/usr/bin/git",
-    "parallels-desktop.brew.path": "/opt/homebrew/bin/brew",
-    "parallels-desktop.devops-service.path": "/Users/lakshya/.parallels-desktop-vscode/tools/prldevops",
     "gitlens.ai.model": "vscode",
     "gitlens.ai.vscode.model": "copilot:gpt-4o-mini",
-    "workbench.colorTheme": "Dracula Theme"
+
+    "workbench.colorTheme": "Kanagawa",
+
+    "editor.fontFamily": "MesloLGS NF",
+    "editor.fontSize": 15,
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "500",
+    "editor.lineHeight": 28,
+    "editor.letterSpacing": 0.3,
+
+    "editor.codeLensFontFamily": "MesloLGS NF",
+    "editor.inlayHints.fontFamily": "MesloLGS NF",
+
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.cursorStyle": "block",
+    "terminal.integrated.cursorBlinking": true,
+
+    "window.titleBarStyle": "custom",
+    "window.commandCenter": false,
+
+    "editor.minimap.enabled": false,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+
+    "apc.imports": [
+        "~/Library/Application Support/Code/User/apc/variables.css",
+        "~/Library/Application Support/Code/User/apc/typography.css",
+        "~/Library/Application Support/Code/User/apc/layout.css",
+        "~/Library/Application Support/Code/User/apc/sidebar.css",
+        "~/Library/Application Support/Code/User/apc/editor.css",
+        "~/Library/Application Support/Code/User/apc/tabs.css",
+        "~/Library/Application Support/Code/User/apc/terminal.css",
+        "~/Library/Application Support/Code/User/apc/commandpalette.css",
+        "~/Library/Application Support/Code/User/apc/statusbar.css",
+        "~/Library/Application Support/Code/User/apc/animations.css",
+        "~/Library/Application Support/Code/User/apc/overrides.css"
+    ],
+
+    "apc.electron": {
+        "transparent": true,
+        "backgroundMaterial": "mica"
+    },
+    "chat.viewSessions.orientation": "stacked"
 }

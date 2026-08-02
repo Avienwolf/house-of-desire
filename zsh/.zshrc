@@ -11,9 +11,9 @@ fi
 # ============================================================
 
 path=(
-    /opt/homebrew/bin
-    /opt/homebrew/sbin
-    $path
+  /opt/homebrew/bin
+  /opt/homebrew/sbin
+  $path
 )
 
 export PATH
@@ -31,7 +31,7 @@ export BAT_THEME="OneHalfDark"
 export GIT_PAGER="delta"
 
 # ============================================================
-# Shell Defaults
+# Shell Options
 # ============================================================
 
 setopt AUTO_CD
@@ -76,9 +76,9 @@ colors
 autoload -Uz compinit
 
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-    compinit
+  compinit
 else
-    compinit -C
+  compinit -C
 fi
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -109,6 +109,12 @@ export FZF_ALT_C_OPTS="
 # ============================================================
 
 eval "$(zoxide init zsh)"
+
+# ============================================================
+# atuin
+# ============================================================
+
+eval "$(atuin init zsh)"
 
 # ============================================================
 # Plugins

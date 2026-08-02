@@ -1,0 +1,102 @@
+# ==========================================================
+# House of Desire - AeroSpace
+# ==========================================================
+
+config-version = 2
+
+start-at-login = true
+auto-reload-config = true
+
+after-startup-command = []
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+focus-follows-mouse.enabled = false
+automatically-unhide-macos-hidden-apps = false
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+key-mapping.preset = 'qwerty'
+
+# ==========================================================
+# Workspaces
+# ==========================================================
+
+persistent-workspaces = ["1", "2"]
+
+# ==========================================================
+# Gaps
+# ==========================================================
+
+gaps.inner.horizontal = 8
+gaps.inner.vertical   = 8
+
+gaps.outer.left   = 8
+gaps.outer.right  = 8
+gaps.outer.top    = 8
+gaps.outer.bottom = 8
+
+# ==========================================================
+# Main
+# ==========================================================
+
+[mode.main.binding]
+
+# ---------- Focus ----------
+ctrl-alt-cmd-shift-left  = 'focus left'
+ctrl-alt-cmd-shift-right = 'focus right'
+ctrl-alt-cmd-shift-up    = 'focus up'
+ctrl-alt-cmd-shift-down  = 'focus down'
+
+# ---------- Modes ----------
+ctrl-alt-cmd-shift-m = 'mode move'
+ctrl-alt-cmd-shift-r = 'mode resize'
+ctrl-alt-cmd-shift-l = 'mode layout'
+ctrl-alt-cmd-shift-w = 'mode workspace'
+
+# ==========================================================
+# Move
+# ==========================================================
+
+[mode.move.binding]
+
+left  = ['move left', 'mode main']
+right = ['move right', 'mode main']
+up    = ['move up', 'mode main']
+down  = ['move down', 'mode main']
+
+esc = 'mode main'
+
+# ==========================================================
+# Resize
+# ==========================================================
+
+[mode.resize.binding]
+
+left  = ['resize smart -50', 'mode main']
+right = ['resize smart +50', 'mode main']
+
+up    = ['resize smart +50', 'mode main']
+down  = ['resize smart -50', 'mode main']
+
+esc = 'mode main'
+
+# ==========================================================
+# Layout
+# ==========================================================
+
+[mode.layout.binding]
+
+t = ['layout tiles horizontal vertical', 'mode main']
+
+a = ['layout accordion horizontal vertical', 'mode main']
+
+f = ['layout floating tiling', 'mode main']
+
+r = ['flatten-workspace-tree', 'mode main']
